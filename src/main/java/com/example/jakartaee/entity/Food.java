@@ -1,4 +1,4 @@
-package com.example.jakartaee;
+package com.example.jakartaee.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +11,8 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.IDENTITY)   //auto-generated primary key
     private Long id;
 
+    String name;
+
     public String getName() {
         return name;
     }
@@ -18,8 +20,6 @@ public class Food {
     public void setName(String name) {
         this.name = name;
     }
-
-    String name;
 
     public void setId(Long id) {
         this.id = id;
