@@ -1,9 +1,11 @@
 package com.example.jakartaee.controller;
 
-import com.example.jakartaee.entity.Food;
+import com.example.jakartaee.dto.FoodDto;
+import com.example.jakartaee.mapper.Mapper;
 import com.example.jakartaee.repository.FoodRepository;
 import com.example.jakartaee.validate.FoodValidator;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -19,14 +21,17 @@ public class FoodController {
     FoodRepository repository;
 
     @Inject
+    Mapper mapper;
+
+    @Inject
     FoodValidator validator;
 
     @GET
-    public List<Food> getAll(@QueryParam("name") String name){
+    public @Valid List<FoodDto> getAll(@QueryParam("name") String name){
         if(name == null)
-            return repository.findAll();
+            return mapper.map(repository.findAll());
 
-        return repository.findAllByName(name);
+        return mapper.map(repository.findAllByName(name));
     }
 
     @GET
@@ -40,7 +45,8 @@ public class FoodController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addOne(Food food){
+    public Response addOne(@Valid FoodDto foodDto){
+        var food = mapper.map(foodDto);
         repository.insertFood(food);
         return Response.created(URI.create("/foods" + food.getId())).build();
     }
