@@ -16,8 +16,6 @@ public class FoodRepository {
     @PersistenceContext
     EntityManager entityManager;
 
-    //Add CRUD methods Collection style
-
     public List<Food> findAll(){
         var query = entityManager.createQuery("select f from Food f");
         return (List<Food>) query.getResultList();
@@ -33,7 +31,16 @@ public class FoodRepository {
 
     public void deleteFood(Long id){
         var food = findOne(id);
-        food.ifPresent((f) -> entityManager.remove(f));
+        food.ifPresent((f)-> entityManager.remove(f));
+    }
+
+    public Food update(Long id, Food food){
+        var entity = entityManager.find(Food.class, id);
+        entity.setName(food.getName());
+        entity.setCategory(food.getCategory());
+        entity.setPrice(food.getPrice());
+        entityManager.persist(entity);
+        return entity;
     }
 
 

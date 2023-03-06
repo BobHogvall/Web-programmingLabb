@@ -10,13 +10,19 @@ import java.util.List;
 public class Mapper {
 
     public List<FoodDto> map(List<Food> all) {
-        return all.stream().map(food -> new FoodDto(food.getId(), food.getName())).toList();
+        return all.stream().map(FoodDto::new).toList();
     }
 
-    public Food map(FoodDto foodDto){
-        var food = new Food();
-        food.setId(foodDto.getId());
-        food.setName(foodDto.getDishName());
-        return food;
+    public Food map(FoodDto food) {
+        var f = new Food();
+        f.setId( food.getId());
+        f.setName(food.getName());
+        f.setCategory(food.getCategory());
+        f.setPrice(food.getPrice());
+        return f;
+    }
+
+    public FoodDto map(Food food) {
+        return new FoodDto(food);
     }
 }

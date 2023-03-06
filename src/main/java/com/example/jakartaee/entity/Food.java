@@ -7,15 +7,29 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   //auto-generated primary key
-    private Long id;
+    private Long id; //private för att ingen ska komma åt det
 
     @NotNull(message = "name can't be null")
     @Size(min = 2)
     String name;
+
+    String category;
+
+    BigDecimal price;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -25,13 +39,20 @@ public class Food {
         this.name = name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getCategory() {
+        return category;
     }
 
-    public Long getId() {
-        return id;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 }
 
