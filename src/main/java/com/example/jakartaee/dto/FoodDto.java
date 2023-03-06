@@ -1,15 +1,23 @@
 package com.example.jakartaee.dto;
 
 import com.example.jakartaee.entity.Food;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
 public class FoodDto {
     private Long id;
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     String name;
 
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     String category;
 
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     BigDecimal price;
 
     public FoodDto() {

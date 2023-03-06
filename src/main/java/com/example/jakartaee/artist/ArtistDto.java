@@ -1,11 +1,20 @@
 package com.example.jakartaee.artist;
 
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class ArtistDto {
 
     private Long id;
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     String name;
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     String recordTitle;
+    @NotNull(message = "can't be null")
+    @Size(min = 1)
     String genre;
 
     public ArtistDto(){}
