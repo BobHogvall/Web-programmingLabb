@@ -2,6 +2,7 @@ package com.example.jakartaee.controller;
 
 import com.example.jakartaee.dto.FoodDto;
 import com.example.jakartaee.entity.Food;
+import com.example.jakartaee.exception.IdNotFoundException;
 import com.example.jakartaee.mapper.Mapper;
 import com.example.jakartaee.repository.FoodRepository;
 //import io.swagger.v3.oas.annotations.media.Content;
@@ -50,7 +51,10 @@ public class FoodController {
         var food = repository.findOne(id);
         if (food.isPresent())
             return Response.ok().entity(food.get()).build();
-        throw new NotFoundException("Id: " + id);
+//        return Response.status(404).build();
+//        throw new IdNotFoundException("Id: " + id);
+        throw new NotFoundException("Id: " + id);  //färdigskapat felmeddelande
+        //om vi vill ha kattbild kan vi gör det med egenskapade exceptions
     }
 
     @POST //CREATE
