@@ -10,15 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e25fe59-3db3-407c-9c1c-5a9d4e013ab6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/exception/IdNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/exception/IdNotFoundExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/Artist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/DescriptionToUnderstand" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/Artist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/controller/FoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/dto/FoodDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/dto/FoodDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/mapper/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/mapper/Mapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +82,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.jakartaee.repository" />
       <recent name="com.example.jakartaee" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,7 +193,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1678113824805</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="add exceptions">
+      <created>1678197403256</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1678197403256</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +220,8 @@
     <MESSAGE value="start with RESTful" />
     <MESSAGE value="add artist" />
     <MESSAGE value="add annotations to dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="add annotations to dto" />
+    <MESSAGE value="add exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="add exceptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

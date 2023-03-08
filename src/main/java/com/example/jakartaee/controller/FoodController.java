@@ -33,7 +33,7 @@ public class FoodController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<FoodDto> getAll(@QueryParam("name") String name) {
+    public List<FoodDto> getAll(@QueryParam("name") String name) { //lista vill aldrig kasta exception, skickar bara empty
         if (name == null)
             return mapper.map(repository.findAll());
 
@@ -47,10 +47,13 @@ public class FoodController {
 //            @ApiResponse(responseCode = "200", description = "Returns food object",
 //                    content = @Content(schema = @Schema(implementation = FoodDto.class))),
 //            @ApiResponse(responseCode = "404", description = "Id not found")})
-    public Response getOne(@PathParam("id") Long id) {
-        var food = repository.findOne(id);
-        if (food.isPresent())
-            return Response.ok().entity(food.get()).build();
+    public Response getOne(@PathParam("id") Long id) { //här ber jag databasen om info/objekt
+        var foodAsEntityObject = repository.findOne(id);
+        if (foodAsEntityObject.isPresent()){
+            var convertFromEntityToDto = mapper.map(foodAsEntityObject.get());
+            return Response.ok().entity(convertFromEntityToDto).build();
+        }
+//            return Response.ok().entity(foodAsEntityObject.get()).build(); //wrappad i mappning
 //        return Response.status(404).build();
 //        throw new IdNotFoundException("Id: " + id);
         throw new NotFoundException("Id: " + id);  //färdigskapat felmeddelande
@@ -59,8 +62,13 @@ public class FoodController {
 
     @POST //CREATE
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addOne(@Valid Food food) {
-        repository.insertFood(food);
+    public Response addOne(@Valid FoodDto food) { //jag lägger till, dto-entit, borde vara dtoFood
+        var inputReceivedByDto = food;
+        var convertFromDtoToEntity = mapper.map(inputReceivedByDto);
+        repository.insertFood(convertFromDtoToEntity);
+
+
+//        repository.insertFood(mapper.map(food)); //som mappas till food
         return Response.created(URI.create("foods/" + food.getId())).build();
     }
 
@@ -69,6 +77,8 @@ public class FoodController {
     public void deleteOne(@PathParam("id") Long id) {
         repository.deleteFood(id);
     }
+    //alla som har One = felmeddelanden
+    //delete kan vara okej att det går igenom om tom - finns ändå inget "är ju borttagen"
 
 
     @PUT //UPDATE
@@ -76,7 +86,13 @@ public class FoodController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response updDate(@PathParam("id") Long id, FoodDto food) {
-        return Response.ok().entity(mapper.map(repository.update(id, mapper.map(food)))).build();
+        var idInputCanBeEntity = id;
+        var inputReceivedAsDto = food;
+        var inputConvertedFromDtoToEntity = mapper.map(inputReceivedAsDto);
+        var updateDatabaseWithEntityViaRep = repository.update(idInputCanBeEntity, inputConvertedFromDtoToEntity);
+        var convertUpdatedObjectBackToDto = mapper.map(updateDatabaseWithEntityViaRep);
+
+        return Response.ok().entity(convertUpdatedObjectBackToDto).build();
     }
 
 //    @GET

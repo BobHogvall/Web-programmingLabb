@@ -62,3 +62,6 @@ public class FoodDto {
         this.price = price;
     }
 }
+
+
+// hade kunnat göra toFood här istället för att ha en egen klass med map
