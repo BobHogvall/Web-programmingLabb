@@ -61,7 +61,11 @@ public class ArtistController {
     @DELETE
     @Path("/{id}")
     public Response deleteOne(@PathParam("id") Long id){
-        repository.deleteArtist(id);
-        return Response.ok().build();
+        var artist = repository.findOne(id);
+        if(artist.isPresent()){
+            repository.deleteArtist(id);
+            return Response.ok().build();
+        }
+        return Response.noContent().build();
     }
 }
