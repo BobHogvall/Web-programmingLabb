@@ -48,7 +48,7 @@ public class ArtistController {
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateOne(@PathParam("id") Long id, ArtistDto artist){
+    public Response updateOne(@PathParam("id") Long id, @Valid ArtistDto artist){
         var idInputCanBeEntity = id;
         var inputReceivedAsDto = artist;
         var ifFoundArtist = repository.findOne(idInputCanBeEntity);
