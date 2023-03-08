@@ -51,11 +51,14 @@ public class ArtistController {
     public Response updateOne(@PathParam("id") Long id, ArtistDto artist){
         var idInputCanBeEntity = id;
         var inputReceivedAsDto = artist;
-        var inputConvertedFromDtoToEntity = mapper.map(inputReceivedAsDto);
-        var updateDatabaseWithEntityViaRep = repository.updateArtist(idInputCanBeEntity, inputConvertedFromDtoToEntity);
-        var convertUpdatedObjectBackToDto = mapper.map(updateDatabaseWithEntityViaRep);
-
-        return Response.ok().entity(convertUpdatedObjectBackToDto).build();
+        var ifFoundArtist = repository.findOne(idInputCanBeEntity);
+        if(ifFoundArtist.isPresent()) {
+            var inputConvertedFromDtoToEntity = mapper.map(inputReceivedAsDto);
+            var updateDatabaseWithEntityViaRep = repository.updateArtist(idInputCanBeEntity, inputConvertedFromDtoToEntity);
+            var convertUpdatedObjectBackToDto = mapper.map(updateDatabaseWithEntityViaRep);
+            return Response.ok().entity(convertUpdatedObjectBackToDto).build();
+        }
+        return Response.noContent().build();
     }
 
     @DELETE

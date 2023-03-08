@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e25fe59-3db3-407c-9c1c-5a9d4e013ab6" name="Changes" comment="">
+    <list default="true" id="3e25fe59-3db3-407c-9c1c-5a9d4e013ab6" name="Changes" comment="add noContent Response for deleteOne if trying to delete empty">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +215,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1678277309698</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="add noContent Response for deleteOne if trying to delete empty">
+      <created>1678277746537</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1678277746537</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +246,8 @@
     <MESSAGE value="remove all food" />
     <MESSAGE value="add artist" />
     <MESSAGE value="add Response as return statement for deleteOne in Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Response as return statement for deleteOne in Controller" />
+    <MESSAGE value="add noContent Response for deleteOne if trying to delete empty" />
+    <option name="LAST_COMMIT_MESSAGE" value="add noContent Response for deleteOne if trying to delete empty" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
