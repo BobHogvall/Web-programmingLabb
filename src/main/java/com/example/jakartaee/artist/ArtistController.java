@@ -20,6 +20,7 @@ public class ArtistController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @SuppressWarnings("redundant")
     public Response addOne(@Valid ArtistDto artist){
         var inputReceivedByDto = artist;
         var convertFromDtoToEntity = mapper.map(inputReceivedByDto);
@@ -48,6 +49,7 @@ public class ArtistController {
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
+    @SuppressWarnings("redundant")
     public Response updateOne(@PathParam("id") Long id, @Valid ArtistDto artist){
         var idInputCanBeEntity = id;
         var inputReceivedAsDto = artist;

@@ -11,9 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3e25fe59-3db3-407c-9c1c-5a9d4e013ab6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/exception/IdNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/exception/IdNotFoundExceptionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/DescriptionToUnderstand" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/DescriptionToUnderstand" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +234,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1678278754442</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="delete helloServlet and created exception class">
+      <created>1678279314122</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1678279314122</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +268,8 @@
     <MESSAGE value="add noContent Response for deleteOne if trying to delete empty" />
     <MESSAGE value="add noContent Response for updateOne if trying to update empty" />
     <MESSAGE value="add noContent @Valid to parameter for updateOne to validate and throw 400 bad request if error occurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add noContent @Valid to parameter for updateOne to validate and throw 400 bad request if error occurs" />
+    <MESSAGE value="delete helloServlet and created exception class" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete helloServlet and created exception class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

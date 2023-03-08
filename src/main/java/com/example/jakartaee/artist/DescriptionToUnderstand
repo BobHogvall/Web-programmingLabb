@@ -31,9 +31,9 @@ Vi vill ta emot den informationen/vi tar emot den informationen.
 
 >>>> MARTIN: Har AddOne redan felhantering med annotationerna, eller behövs det
     andra? Hur vet jag vilka fel som kan hända?
-    hibernate, persista skickar in i databsen - internal server error:
-    Trigga validera tidigare @Valid triggar att den följer annotationsrelgerna
-    jag har ingen hantering av error - hantera det. Får göra en exceptionhanterare
+    hibernate, persist skickar in i databasen - internal server error:
+    Trigga validera tidigare @Valid triggar att den följer annotation-reglerna
+    jag har ingen hantering av error - hantera det. Får göra en exception-hanterare
 
 
 
@@ -88,7 +88,7 @@ Och därmed kastas heller inget NullP. den går bara vidare?
 
 >>>>MARTIN:
 .get()? - varför måste vi ha get? S ar: För att hämta det riktiga objektet. Men om
-det inte finns något blir det null. Or else throw för excepetion
+det inte finns något blir det null. Or else throw för exception
 
 
 
