@@ -1,0 +1,132 @@
+BESKRIVNING AV VAD SOM HÄNDER:
+
+REPOSITORY:
+
+Repository fungerar som en mall(?) för Controller-klassen (som inte kan se någonting
+     i rep.). Den ligger närmst/kommunicerar med Entity-klassen och databasen. Den
+     ligger som en mellanhand i kommunikationen mellan entity och controller.
+
+
+
+
+
+CONTROLLER:
+
+Controllern kommunicerar med databasen och entity genom repository. Controller har i
+    sin tur kontakt med Dto-klassen som den kommunicerar med via mapper. Genom
+    mapper:n konverterar den objekt fram och tillbaka från Entitet och Dto för att
+    skydda känslig information. Vid input: Dto->Entity, vid output: Entity->Dto
+
+Add One:
+Användaren skriver input som ska läggas till i databasen
+
+1) informationen kommer in via json
+fyller i fälten som matchar i Dto-klassen
+skapar ett Dto-objekt
+Vi vill ta emot den informationen/vi tar emot den informationen.
+
+2) Vi vill sen mapp:a om dto-objektet till ett entitetsobjekt
+
+3) efter detta vill vi lägga till informationen i entitetsklassen
+
+>>>> MARTIN: Har AddOne redan felhantering med annotationerna, eller behövs det
+    andra? Hur vet jag vilka fel som kan hända?
+    hibernate, persista skickar in i databsen - internal server error:
+    Trigga validera tidigare @Valid triggar att den följer annotationsrelgerna
+    jag har ingen hantering av error - hantera det. Får göra en exceptionhanterare
+
+
+
+Get One:
+Användaren ber databasen om information.
+
+1) Från databasen skickas information via Entitetsklassen.
+Denna kan innehålla känslig information och därför vill vi gallra den informationen
+    innan den publiceras.
+Detta görs genom dto-klassen.
+Entitetsklassen skapar ett objekt av informationen från databasen.
+
+2) Vi vill sen mapp:a om entitetsobjektet till ett dto-objekt.
+Här filtreras informationen då enbart det som vi kan/vill visa finns med som fält i
+    dto-klassen
+
+3) Efter detta vill vi deserialize informationen till json och publicera det för
+    användaren
+
+
+Get All:
+I getAll-metoden har vi kopplat både findAll och findAllByName från Repository-klassen
+
+Exception: not null, but doesn't find name
+
+
+Update One:
+användaren ber om att uppdatera ett entitetsobjekt, ett dto-objekt av det uppdaterade
+    objektet ska returneras.
+
+1) be entitetsklassen om objektet för ett specifikt Id.
+
+
+
+
+
+Optional som returvärde:
+(Controller kopplat till Repository, Optional är i Rep.)
+   "It provides a clear and explicit way to convey the message
+   that there may not be a value, without using null. When getting an optional return
+   type, we're likely to check if the value is missing, leading to fewer
+   NullPointerExceptions in the application." - baeldung
+
+   Optional erbjuder ett klart och tydligt sätt att framföra meddelandet att där
+   eventuellt inte finns något värde, utan att använda null. När vi får en Optional
+   returtyp det är mer sannolikt att vi kollar om värdet saknas, vilket leder till
+   färre NullPointerExceptions i applikationen.
+
+>>>>>M: Är det att den returnerar ett tomt objekt eller ingenting istället för Null?
+Och därmed kastas heller inget NullP. den går bara vidare?
+    blir mer funktionell programmering.
+
+>>>>MARTIN:
+.get()? - varför måste vi ha get? S ar: För att hämta det riktiga objektet. Men om
+det inte finns något blir det null. Or else throw för excepetion
+
+
+
+
+DTO:
+I Dto-klassen gör vi en kopia av Entitetsklassen beroende på vad vi vill ska kunna vara
+    synligt för användaren.
+
+
+>>>> M: varför använder vi inte alla?
+
+
+
+
+
+MAPPER:
+
+Vi döper alla till samma, här "map" och genom overloading så väljs den metod som
+    matchar inparametern. Här: Food, FoodDto, eller List<Food>.
+
+FoodDto som returnerings-objekt och med Food som parameter:
+    tar emot ett Enitets-objekt som den gör om till ett Dto-objekt
+
+Food som returnerings-objekt och med FoodDto som parameter:
+    tar emot ett Dto-objekt som den gör om till ett Entitets-objekt
+>>>> MARTIN: varför har vi inte en constructor i Entitetsklassen som vi har i Dto?
+  Dto-constructor:n gör att vi kan sätta "new FoodDto(food)" medan vi i Food-map
+  måste rada upp alla?
+
+List<FoodDto> som returnerings-objekt och med List<Food> som parameter:
+    tar emot en lista av Entitetsobjekt som den sen, en i taget, skickar igenom
+    FoodDto-map för att sedan skapa och returnera en lista av FoodDto-objekt
+>>>>MARTIN:
+kan användaren inte skicka in en lista? Så att vi vill göra om från Dto till
+  entitet.
+
+
+GÖRA:
+
+- en exception-hanterare för AddOne, för error
+- getAll, Exception: not null, but doesn't find name
