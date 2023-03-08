@@ -60,7 +60,8 @@ public class ArtistController {
 
     @DELETE
     @Path("/{id}")
-    public void deleteOne(@PathParam("id") Long id){
+    public Response deleteOne(@PathParam("id") Long id){
         repository.deleteArtist(id);
+        return Response.ok().build();
     }
 }

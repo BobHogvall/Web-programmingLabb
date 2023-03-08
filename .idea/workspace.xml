@@ -10,13 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e25fe59-3db3-407c-9c1c-5a9d4e013ab6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/DescriptionToUnderstand" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/servlet/FoodServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/validate/FoodValidator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +198,19 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1678271835389</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="remove all food">
+      <created>1678275946148</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1678275946148</updated>
+    </task>
+    <task id="LOCAL−00007" summary="add artist">
+      <created>1678275961487</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1678275961487</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,11 +229,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start with RESTful" />
-    <MESSAGE value="add artist" />
     <MESSAGE value="add annotations to dto" />
     <MESSAGE value="add exceptions" />
     <MESSAGE value="update Controller with Dto protection" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Controller with Dto protection" />
+    <MESSAGE value="remove all food" />
+    <MESSAGE value="add artist" />
+    <option name="LAST_COMMIT_MESSAGE" value="add artist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
