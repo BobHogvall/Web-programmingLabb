@@ -17,9 +17,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/ArtistRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/artist/DescriptionToUnderstand" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/controller/FoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/dto/FoodDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/dto/FoodDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/mapper/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jakartaee/mapper/Mapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +196,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1678197403256</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="update Controller with Dto protection">
+      <created>1678271835388</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1678271835389</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +224,8 @@
     <MESSAGE value="add artist" />
     <MESSAGE value="add annotations to dto" />
     <MESSAGE value="add exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="add exceptions" />
+    <MESSAGE value="update Controller with Dto protection" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Controller with Dto protection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
